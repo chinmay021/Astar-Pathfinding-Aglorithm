@@ -103,7 +103,7 @@ def heuristic(p1, p2):
     # Manhattan Distance
     return abs(x2 - x1) + (y2 - y1)
     # Euclidian Distance
-    # return pow(pow(abs(x2 - x1), 2) + pow(abs(y2 - y1), 2), 0.5)
+    # return math.sqrt(abs(x2 - x1)**2 + abs(y2 - y1)**2)
 
 
 def reconstruct_path(came_from, current, draw):
@@ -117,7 +117,7 @@ def algorithm(draw, grid, start, end):
     # f(n) = g(n) + h(n)
     count = 0
     open_set = PriorityQueue()
-    #open_set.put((f_Score, count, node))
+    # open_set.put((f_Score, count, node))
     # count is used here to compare if 2 nodes have same f_score then the one which came first then will be considered so to remember which came first we use count
     open_set.put((0, count, start))  # put means insert in PriorityQueue
     came_from = {}
